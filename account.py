@@ -1,20 +1,27 @@
 class Account:
     def __init__(self, name):
         self.account_name = "John"
-        self.account_balance = 0
+        self.account_balance = 100
 
     def deposit(self, amount):
-        if amount > 0:
-            self.account_balance += amount
-            return True
-        else:
+        try:
+            if amount > 0:
+                self.account_balance += amount
+                return True
+            else:
+                return False
+        except TypeError:
             return False
 
     def withdraw(self, amount):
-        if self.account_balance >= amount
-            self.account_balance -= amount
-            return True
-        else:
+        try:
+            if amount > 0:
+                if self.account_balance >= amount:
+                    self.account_balance -= amount
+                    return True
+                else:
+                    return False
+        except TypeError:
             return False
 
     def get_balance(self):
